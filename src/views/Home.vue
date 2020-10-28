@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div @click="loadChild()">加载子组件1</div>
+    <div @click="loadChild2()">加载子组件2</div>
+    <router-view />
   </div>
 </template>
 
@@ -13,6 +15,14 @@ export default {
   name: "Home",
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+    loadChild() {
+      this.$router.push({path:'/test'})
+    },
+    loadChild2() {
+      this.$router.push({path:'/test1'})
+    },
+  },
 };
 </script>

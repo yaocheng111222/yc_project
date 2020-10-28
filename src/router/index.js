@@ -8,7 +8,20 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    edirect: '/test',
+    children: [
+      {
+        path: "/test",
+        name: 'test',
+        component: () => import("../components/test.vue")
+      },
+      {
+        path: "/test1",
+        name: 'test1',
+        component: () => import("../components/test1.vue")
+      }
+    ]
   },
   {
     path: "/about",
